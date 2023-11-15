@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body class="bg-sky-200 text-white text-center h-screen w-screen">
+
+    <div class="w-1/5 h-2/5 bg-black text-center rounded-md">
+
+        <table class="w-1/2 mx-auto">
+            <thead class="flex justify-center">
+                <th class="px-4">Nombre</th>
+                <th class="px-4">Apellido</th>
+                <th class="px-4">Correo</th>
+            </thead>
+    
+            <tbody>
+                {% for usuario in lista_usuarios %}
+                    <tr>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.apellido }}</td>
+                        <td>{{ usuario.correo }}</td>
+                        <td>
+                            <form action="{{ url_for('actualizar', usuario_id=usuario.id) }}" method="get">
+                            <input type="submit" value="Actualizar">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/eliminar" method="post">
+                                <input type="hidden" name="usuario_id" value="{{usuario.id}}">
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>    
+    
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

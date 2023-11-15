@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+
+<body class="bg-sky-200 flex justify-center">
+    <header></header>
+
+    <div class="text-white font-bold w-screen ">
+
+        <form action="/mostrar_texto/{{ usuario_id}}" method="post">
+            <section class="bg-slate-800 w-3/4 rounded-lg"> 
+                <label class="font-bold" for="texto_largo">ESCRIBA AQUI</label>
+                <textarea class="w-full h-full bg-slate-800 rounded-lg border-3 w-44" name="texto_largo" id="texto_largo" cols="30" rows="10"></textarea> 
+                <div class="flex items-center justify-center">
+                    <input class="bg-black w- rounded-lg" type="submit" class="place-content-center font-bold bg-black text-white px-4 py-2 rounded" value="SUBIR"> 
+                </div>
+                
+        
+            </section>
+
+        </form>
+                
+            
+    
+    </div>
+
+</body>
+</html>
